@@ -7,7 +7,6 @@ module.exports = function (app) {
     //get all products
     app.get('/api/all/products', function (req, res) {
       products.find({}, function (err, products) {
-        console.log('request came!!!');
           if (err) {
               res.send(err);
           }
@@ -27,7 +26,7 @@ module.exports = function (app) {
 
     // getProductByLocation
     app.get('/api/location/:prodId', function (req, res) {
-        productLocations.findOne(productId: req.params.prodId, function(err, product) {
+        productLocations.findOne({productId: req.params.prodId}, function(err, product) {
           if (err) {
               res.send(err);
           }
