@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var productLocationSchema = new Schema({
-      product_id: { type: Schema.Types.ObjectId, ref: 'products' },
+      product: { type: Schema.Types.Object, ref: 'products' },
       location: {
         aisle: Number,
         orientationCode: Number,
@@ -15,7 +15,9 @@ var productLocationSchema = new Schema({
         latitude: Number,
         Longitude: Number,
         Floor: Number
-      }
+      },
+      productFrnId: Number,
+      productLocationId: Number
 });
 
 module.exports = mongoose.model('product_locations', productLocationSchema);

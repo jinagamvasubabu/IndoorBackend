@@ -2,11 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var locationPromotionSchema = new Schema ({
-    location_id: { type: Schema.Types.ObjectId, ref: 'product_locations' },
+    productLocation: { type: Schema.Types.Object, ref: 'product_locations' },
     promotions: [{
       title: String,
       Message: String
-    }]
+    }],
+    productLocationFrnId: Number
 });
 
 

@@ -25,8 +25,8 @@ module.exports = function (app) {
     });
 
     // getProductByLocation
-    app.get('/api/location/:prodId', function (req, res) {
-        productLocations.findOne({productId: req.params.prodId}, function(err, product) {
+    app.get('/api/product/location/:prodId', function (req, res) {
+        productLocations.findOne({productFrnId: req.params.prodId}, function(err, product) {
           if (err) {
               res.send(err);
           }
@@ -35,8 +35,8 @@ module.exports = function (app) {
     });
 
     // getPromotions by location
-    app.get('/api/promotions/:locationId', function (req, res) {
-        productLocations.findOne({location_id: req.params.locationId}, function(err, promotions) {
+    app.get('/api/promotion/location/:locationId', function (req, res) {
+        locationPromotions.findOne({productLocationFrnId: req.params.locationId}, function(err, promotions) {
           if (err) {
               res.send(err);
           }
